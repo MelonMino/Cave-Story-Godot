@@ -33,6 +33,9 @@ func _physics_process(delta):
 		if not is_on_floor():
 			anim = "Jump"
 			jumpTime = 0.0
+			# Fall state
+			if velocity.y > 0:
+				anim = "Fall"
 
 		# Handle jump.
 		if Input.is_action_just_pressed("Jump") and is_on_floor():

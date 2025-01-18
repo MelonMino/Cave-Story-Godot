@@ -11,6 +11,18 @@ region = Rect2(112, 16, 16, 16)
 atlas = ExtResource("1_vtqvh")
 region = Rect2(112, 16, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiy6d"]
+atlas = ExtResource("1_vtqvh")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6gdh"]
+atlas = ExtResource("1_vtqvh")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwdbt"]
+atlas = ExtResource("1_vtqvh")
+region = Rect2(64, 16, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qg7ko"]
 atlas = ExtResource("1_vtqvh")
 region = Rect2(0, 16, 16, 16)
@@ -23,10 +35,6 @@ region = Rect2(48, 16, 16, 16)
 atlas = ExtResource("1_vtqvh")
 region = Rect2(32, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k6gdh"]
-atlas = ExtResource("1_vtqvh")
-region = Rect2(96, 16, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ny1qr"]
 atlas = ExtResource("1_vtqvh")
 region = Rect2(80, 16, 16, 16)
@@ -35,10 +43,6 @@ region = Rect2(80, 16, 16, 16)
 atlas = ExtResource("1_vtqvh")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wiy6d"]
-atlas = ExtResource("1_vtqvh")
-region = Rect2(16, 16, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajxun"]
 atlas = ExtResource("1_vtqvh")
 region = Rect2(32, 16, 16, 16)
@@ -46,10 +50,6 @@ region = Rect2(32, 16, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cwvsk"]
 atlas = ExtResource("1_vtqvh")
 region = Rect2(48, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kwdbt"]
-atlas = ExtResource("1_vtqvh")
-region = Rect2(64, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6cwxf"]
 atlas = ExtResource("1_vtqvh")
@@ -71,6 +71,30 @@ animations = [{
 }],
 "loop": true,
 "name": &"Door",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiy6d")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6gdh")
+}],
+"loop": true,
+"name": &"FallLookDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwdbt")
+}],
+"loop": true,
+"name": &"FallLookUp",
 "speed": 5.0
 }, {
 "frames": [{
@@ -169,7 +193,7 @@ script = ExtResource("1_1f2nm")
 z_index = -1
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_x1tpm")
-animation = &"Idle"
+animation = &"FallLookDown"
 
 [node name="Bottom" type="CollisionShape2D" parent="."]
 shape = SubResource("SeparationRayShape2D_tenlp")
